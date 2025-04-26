@@ -1,0 +1,192 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #f7f7f7;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Input Fields */
+  input, select, button {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input Fields Styles */
+  input[type="text"], input[type="number"], select {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #4A90E2;
+    background-color: #2E2E2E;
+    color: white;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.7);
+  }
+  
+  input[type="text"]:hover, input[type="number"]:hover, select:hover {
+    background-color: #3C3C3C;
+  }
+  
+  /* Floating Labels for Input Fields */
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container label {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: 14px;
+    color: #A3A3A3;
+    transition: 0.3s;
+  }
+  
+  input[type="text"]:focus + label,
+  input[type="number"]:focus + label,
+  select:focus + label {
+    top: -18px;
+    left: 15px;
+    font-size: 12px;
+    color: #4A90E2;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 12px 20px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #357ABD;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.7);
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #333;
+    color: #f7f7f7;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #222;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #2c2c2c;
+  }
+  
+  tr:hover {
+    background-color: #3C3C3C;
+  }
+  
+  /* Total Area Styles */
+  #total-area {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 20px;
+  }
+  
+  /* Add Measurement Button Section */
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  button {
+    width: 48%;
+    padding: 15px;
+    background: linear-gradient(145deg, #4A90E2, #357ABD);
+  }
+  
+  input#filename {
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #4A90E2;
+    background-color: #2E2E2E;
+    color: white;
+    width: 48%;
+  }
+  
+  input#filename:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.7);
+  }
+  
+  /* Hover Effects for Input and Button Section */
+  input[type="text"]:hover, input[type="number"]:hover, select:hover, button:hover {
+    background-color: #3C3C3C;
+  }
+  
+  /* Shadow and Glow Effect */
+  .container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Flex Center Alignment for Add Measurement Section */
+  #manual-entry {
+    text-align: center;
+  }
+  
+  /* Extra Responsiveness */
+  @media screen and (max-width: 768px) {
+    .input-container {
+      margin-bottom: 15px;
+    }
+  
+    .flex {
+      flex-direction: column;
+    }
+  
+    .flex button,
+    .flex input {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .table {
+      font-size: 12px;
+    }
+  }
+  

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measurement to Sqft Converter</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black min-h-screen flex flex-col items-center p-6">
+
+  <div class="w-full max-w-4xl bg-blue-900 rounded-2xl shadow-lg p-6 md:p-8">
+    <h1 class="text-2xl md:text-3xl font-bold text-center text-white mb-6">
+      Area Converter to Sqft
+    </h1>
+
+    <!-- Manual Measurement Form -->
+    <div id="manual-entry" class="hidden mb-6">
+      <h2 class="text-xl font-semibold text-white mb-4">Add a Measurement</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Description Input -->
+        <div class="input-container">
+          <input id="description" type="text"  class="border p-2 rounded-lg">
+          <label for="description">Description</label>
+        </div>
+        <!-- Length Input -->
+        <div class="input-container">
+          <input id="length" type="number"  class="border p-2 rounded-lg" required>
+          <label for="length">Length</label>
+        </div>
+        <!-- Breadth Input -->
+        <div class="input-container">
+          <input id="breadth" type="number"  class="border p-2 rounded-lg" required>
+          <label for="breadth">Breadth</label>
+        </div>
+        <!-- Unit Selection -->
+        <div class="input-container">
+          <select id="unit" class="border p-2 rounded-lg" required>
+            <option value="mm" selected>Millimeter</option>
+            <option value="inch">Inch</option>
+            <option value="cm">Centimeter</option>
+          </select>
+          <!-- <label for="unit">Unit</label> -->
+        </div>
+      </div>
+      <div class="flex gap-4 mt-4">
+        <button onclick="saveMeasurement()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-2xl">
+          ✅ Save
+        </button>
+        <button onclick="cancelMeasurement()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-2xl">
+          ❌ Cancel
+        </button>
+      </div>
+    </div>
+
+    <!-- Measurements Table -->
+    <div id="file-data-table" class="w-full overflow-x-auto mt-6">
+      <h2 class="text-xl font-semibold text-white mb-4">Measurements</h2>
+      <table class="min-w-full table-auto border-collapse">
+        <thead>
+          <tr class="bg-gray-800">
+            <th class="border px-4 py-2 text-white">Serial No.</th>
+            <th class="border px-4 py-2 text-white">Description</th>
+            <th class="border px-4 py-2 text-white">Length</th>
+            <th class="border px-4 py-2 text-white">Breadth</th>
+            <th class="border px-4 py-2 text-white">Area (sqft)</th>
+            <th class="border px-4 py-2 text-white">Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+
+      <h3 id="total-area" class="text-lg font-bold text-green-500 mt-4"></h3>
+
+      <button onclick="downloadExcel()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-2xl mt-6">
+        📥 Download Excel
+      </button>
+    </div>
+
+    <!-- Add Measurement + File Name Section -->
+    <div class="flex flex-col md:flex-row gap-4 mt-8 justify-center">
+      <button onclick="addMeasurement()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-2xl w-full md:w-auto">
+        ➕ Add Measurement
+      </button>
+      <input id="filename" type="text" placeholder="Enter Excel File Name" class="border p-2 rounded-lg w-full md:w-72">
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
